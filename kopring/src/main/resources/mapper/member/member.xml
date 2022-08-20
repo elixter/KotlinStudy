@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.elixter.kopring.mapper.MemberMapper">
+
+    <insert id="save" parameterType="com.elixter.kopring.domain.Member" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO members(name)
+        VALUES (#{name})
+    </insert>
+
+    <select id="findById" resultType="com.elixter.kopring.domain.Member">
+        SELECT *
+        FROM members
+        WHERE id = #{id}
+    </select>
+
+</mapper>
