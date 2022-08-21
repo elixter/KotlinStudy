@@ -9,7 +9,18 @@ import org.springframework.stereotype.Repository
 @Mapper
 interface MemberMapper {
 
+    //save
     fun save(member: Member)
 
+    // find
     fun findById(@Param("id") id: Long): Member?
+    fun findByEmail(@Param("email") email: String): Member?
+    fun findByLoginId(@Param("loginId") loginId: String): Member?
+
+    // findAll
+
+    // update
+    fun update()
+
+    // delete
 }

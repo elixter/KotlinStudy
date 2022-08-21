@@ -13,4 +13,16 @@
         WHERE id = #{id}
     </select>
 
+    <select id="findByEmail" resultType="Member">
+        SELECT *
+        FROM members
+        WHERE email = #{email}
+    </select>
+
+    <select id="findByLoginId" resultType="Member">
+        SELECT *
+        FROM members
+        WHERE login_id = #{loginId}
+    </select>
+
 </mapper>
