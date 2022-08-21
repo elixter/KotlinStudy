@@ -1,6 +1,7 @@
 package com.elixter.kopring.mapper.member
 
 import com.elixter.kopring.domain.member.Member
+import com.elixter.kopring.dto.member.UpdateMemberDto
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Param
 import org.springframework.stereotype.Repository
@@ -20,7 +21,7 @@ interface MemberMapper {
     // findAll
 
     // update
-    fun update()
+    fun update(@Param("id") id: Long, @Param("updateParam") updateParam: UpdateMemberDto)
 
     // delete
 }

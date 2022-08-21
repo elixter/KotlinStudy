@@ -25,4 +25,18 @@
         WHERE login_id = #{loginId}
     </select>
 
+    <update id="update">
+        UPDATE members
+        <set>
+            <if test="updateParam.password != null">
+                password = #{updateParam.password}
+            </if>
+
+            <if test="updateParam.role != null">
+                role = #{updateParam.role}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
 </mapper>

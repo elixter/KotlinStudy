@@ -2,6 +2,8 @@ package com.elixter.kopring.mapper.member
 
 import com.elixter.kopring.domain.member.Member
 import com.elixter.kopring.domain.member.MemberRole
+import com.elixter.kopring.domain.member.MemberRole.ADMIN
+import com.elixter.kopring.dto.member.UpdateMemberDto
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.mindrot.jbcrypt.BCrypt
@@ -84,6 +86,41 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             .run {
                 log.info("findByLoginId={}", this)
                 Assertions.assertThat(this).isEqualTo(member)
+            }
+    }
+
+    @Test
+    @Transactional
+    fun update() {
+        val member = Member(
+            name = "Taewon Lee",
+            loginId = "mapperTest",
+            password = BCrypt.hashpw("1q2w3e4r", BCrypt.gensalt()),
+            email = "test@mapperTest.com",
+            role = MemberRole.MEMBER
+        ).apply {
+            memberMapper.save(this)
+        }
+
+        log.info("### update password ###")
+        val updatePassword = member.copy(
+            password = BCrypt.hashpw("newPW", BCrypt.gensalt())
+        )
+        log.info("updatePassword={}", updatePassword)
+
+        memberMapper.update(member.id!!, UpdateMemberDto(password = updatePassword.password))
+        memberMapper.findById(member.id!!)
+            .run {
+                log.info("newPassword={}", this)
+                Assertions.assertThat(this).isEqualTo(updatePassword)
+            }
+
+        log.info("### update member role ###")
+        memberMapper.update(member.id!!, UpdateMemberDto(role = ADMIN))
+        memberMapper.findById(member.id!!)
+            .run {
+                log.info("newRole={}", this)
+                Assertions.assertThat(this).isEqualTo(updatePassword.copy(role = ADMIN))
             }
     }
 
