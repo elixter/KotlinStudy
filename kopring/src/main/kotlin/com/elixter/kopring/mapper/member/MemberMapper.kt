@@ -1,7 +1,6 @@
-package com.elixter.kopring.mapper
+package com.elixter.kopring.mapper.member
 
-import com.elixter.kopring.domain.Member
-import org.apache.ibatis.annotations.Insert
+import com.elixter.kopring.domain.member.Member
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Param
 import org.springframework.stereotype.Repository

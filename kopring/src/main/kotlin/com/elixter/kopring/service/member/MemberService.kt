@@ -1,9 +1,9 @@
 package com.elixter.kopring.service.member
 
-import com.elixter.kopring.domain.Member
-import com.elixter.kopring.domain.MemberRole.MEMBER
-import com.elixter.kopring.dto.CreateMemberDto
-import com.elixter.kopring.mapper.MemberMapper
+import com.elixter.kopring.domain.member.Member
+import com.elixter.kopring.domain.member.MemberRole.MEMBER
+import com.elixter.kopring.dto.member.CreateMemberDto
+import com.elixter.kopring.mapper.member.MemberMapper
 import org.mindrot.jbcrypt.BCrypt
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired

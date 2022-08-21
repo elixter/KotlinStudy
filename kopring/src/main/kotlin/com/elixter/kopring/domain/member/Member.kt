@@ -1,6 +1,6 @@
-package com.elixter.kopring.domain
+package com.elixter.kopring.domain.member
 
-import com.elixter.kopring.domain.MemberRole.MEMBER
+import com.elixter.kopring.domain.member.MemberRole.MEMBER
 
 data class Member (
     val id: Long? = null,

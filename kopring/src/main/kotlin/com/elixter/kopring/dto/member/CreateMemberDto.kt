@@ -1,4 +1,4 @@
-package com.elixter.kopring.dto
+package com.elixter.kopring.dto.member
 
 data class CreateMemberDto (
     val name: String,

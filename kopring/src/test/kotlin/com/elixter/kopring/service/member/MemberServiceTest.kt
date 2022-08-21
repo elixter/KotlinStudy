@@ -1,8 +1,7 @@
-package com.elixter.kopring.service
+package com.elixter.kopring.service.member
 
-import com.elixter.kopring.dto.CreateMemberDto
-import com.elixter.kopring.mapper.MemberMapper
-import com.elixter.kopring.service.member.MemberService
+import com.elixter.kopring.dto.member.CreateMemberDto
+import com.elixter.kopring.mapper.member.MemberMapper
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
@@ -16,7 +15,8 @@ class MemberServiceTest @Autowired constructor(val service: MemberService, val m
     @Test
     @Transactional
     internal fun createMember() {
-        with(CreateMemberDto(
+        with(
+            CreateMemberDto(
             name = "Taewon Lee",
             loginId = "createTest",
             password = "1q2w3e4r",

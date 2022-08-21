@@ -1,4 +1,4 @@
-package com.elixter.kopring.domain
+package com.elixter.kopring.domain.member
 
 enum class MemberRole {
     MEMBER,
