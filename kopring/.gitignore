@@ -38,3 +38,6 @@ out/
 
 ### private properties
 application-db.properties
+
+### log ###
+src/logs/

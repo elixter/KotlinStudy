@@ -16,6 +16,12 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+	all {
+//		exclude("org.springframework.boot", "spring-boot-starter-logging")
+	}
+}
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -30,6 +36,9 @@ dependencies {
 
 	// Bcrypt
 	implementation("de.svenkubiak:jBCrypt:0.4.1")
+
+	// log4j2
+//	implementation("org.springframework.boot:spring-boot-starter-log4j2")
 }
 
 tasks.withType<KotlinCompile> {
