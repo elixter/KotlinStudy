@@ -3,8 +3,8 @@
 <mapper namespace="com.elixter.kopring.mapper.MemberMapper">
 
     <insert id="save" parameterType="Member" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-        INSERT INTO members(name)
-        VALUES (#{name})
+        INSERT INTO members(name, login_id, password, email, role)
+        VALUES (#{name}, #{loginId}, #{password}, #{email}, #{role})
     </insert>
 
     <select id="findById" resultType="Member">

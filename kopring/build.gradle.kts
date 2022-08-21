@@ -27,6 +27,9 @@ dependencies {
 	runtimeOnly("mysql:mysql-connector-java")
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2") // Mybatis
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// Bcrypt
+	implementation("de.svenkubiak:jBCrypt:0.4.1")
 }
 
 tasks.withType<KotlinCompile> {
