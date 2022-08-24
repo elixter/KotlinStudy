@@ -41,6 +41,10 @@ dependencies {
 
 	// log4j2
 //	implementation("org.springframework.boot:spring-boot-starter-log4j2")
+
+	// 캐싱
+	implementation("org.springframework.boot:spring-boot-starter-cache")
+	implementation("com.github.ben-manes.caffeine:caffeine")
 }
 
 tasks.withType<KotlinCompile> {
