@@ -4,6 +4,7 @@ import com.elixter.kopring.domain.member.Member
 import com.elixter.kopring.domain.member.MemberRole
 import com.elixter.kopring.domain.member.MemberRole.ADMIN
 import com.elixter.kopring.dto.member.UpdateMemberDto
+import mu.KLogging
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.mindrot.jbcrypt.BCrypt
@@ -28,7 +29,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             memberMapper.save(this)
         }
 
-        log.info("member={}", member)
+        logger.info("member={}", member)
     }
 
     @Test
@@ -45,7 +46,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
         }
 
         val findById = memberMapper.findById(member.id!!)
-        log.info("findById={}", findById)
+        logger.info("findById={}", findById)
         Assertions.assertThat(findById).isEqualTo(member)
     }
 
@@ -64,7 +65,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
 
         memberMapper.findByEmail("test@mapperTest.com")
             .run {
-                log.info("findByEmail={}", this)
+                logger.info("findByEmail={}", this)
                 Assertions.assertThat(this).isEqualTo(member)
             }
     }
@@ -84,7 +85,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
 
         memberMapper.findByLoginId("mapperTest")
             .run {
-                log.info("findByLoginId={}", this)
+                logger.info("findByLoginId={}", this)
                 Assertions.assertThat(this).isEqualTo(member)
             }
     }
@@ -102,29 +103,27 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             memberMapper.save(this)
         }
 
-        log.info("### update password ###")
+        logger.info("### update password ###")
         val updatePassword = member.copy(
             password = BCrypt.hashpw("newPW", BCrypt.gensalt())
         )
-        log.info("updatePassword={}", updatePassword)
+        logger.info("updatePassword={}", updatePassword)
 
         memberMapper.update(member.id!!, UpdateMemberDto(password = updatePassword.password))
         memberMapper.findById(member.id!!)
             .run {
-                log.info("newPassword={}", this)
+                logger.info("newPassword={}", this)
                 Assertions.assertThat(this).isEqualTo(updatePassword)
             }
 
-        log.info("### update member role ###")
+        logger.info("### update member role ###")
         memberMapper.update(member.id!!, UpdateMemberDto(role = ADMIN))
         memberMapper.findById(member.id!!)
             .run {
-                log.info("newRole={}", this)
+                logger.info("newRole={}", this)
                 Assertions.assertThat(this).isEqualTo(updatePassword.copy(role = ADMIN))
             }
     }
 
-    companion object {
-        val log = LoggerFactory.getLogger(MemberMapperTest.toString())
-    }
+    companion object : KLogging()
 }

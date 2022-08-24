@@ -2,6 +2,7 @@ package com.elixter.kopring.service.member
 
 import com.elixter.kopring.dto.member.CreateMemberDto
 import com.elixter.kopring.mapper.member.MemberMapper
+import mu.KLogging
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
@@ -24,12 +25,10 @@ class MemberServiceTest @Autowired constructor(val service: MemberService, val m
         ).let {
             service.createUser(it)
         }) {
-            log.info("createMember={}", this)
+            logger.info("createMember={}", this)
             Assertions.assertThat(this).isEqualTo(mapper.findById(this.id!!))
         }
     }
 
-    companion object {
-        val log = LoggerFactory.getLogger(MemberServiceTest.toString())
-    }
+    companion object : KLogging()
 }
