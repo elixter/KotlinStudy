@@ -3,12 +3,11 @@ package com.elixter.kopring.mapper.member
 import com.elixter.kopring.domain.member.Member
 import com.elixter.kopring.domain.member.MemberRole
 import com.elixter.kopring.domain.member.MemberRole.ADMIN
-import com.elixter.kopring.dto.member.UpdateMemberDto
+import com.elixter.kopring.dto.member.UpdateMemberParam
 import mu.KLogging
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.mindrot.jbcrypt.BCrypt
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
@@ -109,7 +108,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
         )
         logger.info("updatePassword={}", updatePassword)
 
-        memberMapper.update(member.id!!, UpdateMemberDto(password = updatePassword.password))
+        memberMapper.update(member.id!!, UpdateMemberParam(password = updatePassword.password))
         memberMapper.findById(member.id!!)
             .run {
                 logger.info("newPassword={}", this)
@@ -117,7 +116,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             }
 
         logger.info("### update member role ###")
-        memberMapper.update(member.id!!, UpdateMemberDto(role = ADMIN))
+        memberMapper.update(member.id!!, UpdateMemberParam(role = ADMIN))
         memberMapper.findById(member.id!!)
             .run {
                 logger.info("newRole={}", this)

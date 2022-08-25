@@ -1,8 +1,8 @@
 package com.elixter.kopring.dto.member
 
-data class CreateMemberDto (
+data class MemberResponse(
+    val id: Long,
     val name: String,
     val loginId: String,
-    val password: String,
     val email: String,
 )

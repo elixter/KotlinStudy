@@ -1,11 +1,10 @@
 package com.elixter.kopring.service.member
 
-import com.elixter.kopring.dto.member.CreateMemberDto
+import com.elixter.kopring.dto.member.CreateMemberParam
 import com.elixter.kopring.mapper.member.MemberMapper
 import mu.KLogging
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
@@ -17,7 +16,7 @@ class MemberServiceTest @Autowired constructor(val service: MemberService, val m
     @Transactional
     internal fun createMember() {
         with(
-            CreateMemberDto(
+            CreateMemberParam(
             name = "Taewon Lee",
             loginId = "createTest",
             password = "1q2w3e4r",
