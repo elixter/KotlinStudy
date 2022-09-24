@@ -3,8 +3,9 @@ package com.elixter.kopring.service.member
 import com.elixter.kopring.dto.member.CreateMemberParam
 import com.elixter.kopring.mapper.member.MemberMapper
 import mu.KLogging
-import org.assertj.core.api.Assertions
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
@@ -12,21 +13,24 @@ import org.springframework.transaction.annotation.Transactional
 @SpringBootTest
 class MemberServiceTest @Autowired constructor(val service: MemberService, val mapper: MemberMapper) {
 
+    
+    // TODO: Mockk, FixtureMonkey 적용
     @Test
     @Transactional
     internal fun createMember() {
-        with(
-            CreateMemberParam(
+        // given
+        val param = CreateMemberParam(
             name = "Taewon Lee",
             loginId = "createTest",
             password = "1q2w3e4r",
             email = "test@test.com"
-        ).let {
-            service.createUser(it)
-        }) {
-            logger.info("createMember={}", this)
-            Assertions.assertThat(this).isEqualTo(mapper.findById(this.id!!))
-        }
+        )
+
+        // when
+        val actual = assertDoesNotThrow { service.createUser(param) }
+
+        // then
+        Assertions.assertEquals(param.name, actual.name)
     }
 
     companion object : KLogging()

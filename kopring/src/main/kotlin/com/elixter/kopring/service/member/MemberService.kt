@@ -2,7 +2,9 @@ package com.elixter.kopring.service.member
 
 import com.elixter.kopring.aop.LogExecutionTime
 import com.elixter.kopring.domain.member.Member
+import com.elixter.kopring.domain.member.MemberRole
 import com.elixter.kopring.domain.member.MemberRole.MEMBER
+import com.elixter.kopring.dto.member.CreateMemberParam
 import com.elixter.kopring.mapper.member.MemberMapper
 import mu.KLogging
 import org.mindrot.jbcrypt.BCrypt
@@ -15,17 +17,20 @@ class MemberService @Autowired constructor(private val memberMapper: MemberMappe
 
     // TODO: Caffein 캐싱 적용해보기.
     @LogExecutionTime
-    fun createUser(newMember: Member): Member {
-        val result = newMember.copy(
-            password = BCrypt.hashpw(newMember.password, BCrypt.gensalt()),
+    fun createUser(param: CreateMemberParam): Member {
+        val member = Member(
+            name = param.name,
+            loginId = param.loginId,
+            password = BCrypt.hashpw(param.password, BCrypt.gensalt()),
+            email = param.email,
             role = MEMBER
-        ).apply {
-            memberMapper.save(this)
-        }
-        logger.info("newMember={}", result)
+        )
+        memberMapper.insert(member)
+        logger.info { "[MemberService] member created - id : ${member.id}" }
 
-        return result
+        return member
     }
+
 
     companion object : KLogging()
 }

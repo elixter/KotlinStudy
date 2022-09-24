@@ -29,7 +29,7 @@ class MemberController (val memberService: MemberService) {
                 email = createMemberParam.email,
             ).run {
                 try {
-                    memberService.createUser(this)
+                    memberService.createUser(createMemberParam)
                 } catch (e: DataIntegrityViolationException) {
                     logger.error("[SQL Error] : {}", e.message)
                     throw Exception("중복")

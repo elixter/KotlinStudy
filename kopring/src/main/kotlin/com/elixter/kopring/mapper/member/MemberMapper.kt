@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository
 interface MemberMapper {
 
     //save
-    fun save(member: Member)
+    fun insert(member: Member)
 
     // find
     fun findById(@Param("id") id: Long): Member?

@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e97995-6934-4b1b-90bd-b9dc6ce15745" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/kopring/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/controller/MemberController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/controller/MemberController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/mapper/member/MemberMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/mapper/member/MemberMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/service/member/MemberService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/service/member/MemberService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/resources/application-local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/main/resources/mapper/member/member.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/resources/mapper/member/member.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/KopringApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/KopringApplicationTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/mapper/member/MemberMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/mapper/member/MemberMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/service/member/MemberServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/service/member/MemberServiceTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,12 +50,87 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/kotlinStudy/persistence",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.KopringApplication">
+  <component name="RunManager" selected="Gradle.MemberServiceTest.createMember$kopring">
+    <configuration name="MemberMapperTest.save" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kopring" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.elixter.kopring.mapper.member.MemberMapperTest.save&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MemberServiceTest.createMember$kopring" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kopring" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.elixter.kopring.service.member.MemberServiceTest.createMember$kopring&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'com.elixter.kopring'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kopring" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.elixter.kopring.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="KopringApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="kotlinStudy.kopring.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.elixter.kopring.KopringApplication" />
@@ -74,6 +159,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MemberServiceTest.createMember$kopring" />
+        <item itemvalue="Gradle.MemberMapperTest.save" />
+        <item itemvalue="Gradle.Tests in 'com.elixter.kopring'" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,11 +175,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664002463139</updated>
-      <workItem from="1664002465678" duration="2560000" />
+      <workItem from="1664002465678" duration="4902000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
