@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.elixter.kopring.mapper.MemberMapper">
+<mapper namespace="com.elixter.kopring.mapper.member.MemberMapper">
 
     <insert id="save" parameterType="Member" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
-        INSERT INTO members(name)
-        VALUES (#{name})
+        INSERT INTO members(name, login_id, password, email, role)
+        VALUES (#{name}, #{loginId}, #{password}, #{email}, #{role})
     </insert>
 
     <select id="findById" resultType="Member">
@@ -12,5 +12,31 @@
         FROM members
         WHERE id = #{id}
     </select>
+
+    <select id="findByEmail" resultType="Member">
+        SELECT *
+        FROM members
+        WHERE email = #{email}
+    </select>
+
+    <select id="findByLoginId" resultType="Member">
+        SELECT *
+        FROM members
+        WHERE login_id = #{loginId}
+    </select>
+
+    <update id="update">
+        UPDATE members
+        <set>
+            <if test="updateParam.password != null">
+                password = #{updateParam.password}
+            </if>
+
+            <if test="updateParam.role != null">
+                role = #{updateParam.role}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
 
 </mapper>

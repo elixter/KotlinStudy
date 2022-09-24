@@ -35,9 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-### private properties
-application-db.properties
-
-### log ###
-src/logs/
