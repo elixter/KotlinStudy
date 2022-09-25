@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e97995-6934-4b1b-90bd-b9dc6ce15745" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/persistence/src/main/kotlin/com/elixter/persistence/config/DatabaseConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/src/main/kotlin/com/elixter/persistence/member/MemberRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/src/main/kotlin/com/elixter/persistence/member/MemberRole.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/src/test/kotlin/com/elixter/persistence/member/MemberRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/controller/MemberController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/controller/MemberController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/mapper/member/MemberMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/mapper/member/MemberMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/service/member/MemberService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/kotlin/com/elixter/kopring/service/member/MemberService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/resources/application-local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/main/resources/mapper/member/member.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/main/resources/mapper/member/member.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/KopringApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/KopringApplicationTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/mapper/member/MemberMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/mapper/member/MemberMapperTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/service/member/MemberServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kopring/src/test/kotlin/com/elixter/kopring/service/member/MemberServiceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,14 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
@@ -46,6 +52,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -53,7 +63,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "7628ba028579bd50a38a523fe3677736"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -61,7 +72,13 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.MemberServiceTest.createMember$kopring">
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.elixter.persistence.member" />
+      <recent name="com.elixter.kopring.mapper.member" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.MemberRepositoryTest.insert">
     <configuration name="MemberMapperTest.save" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -76,6 +93,52 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.elixter.kopring.mapper.member.MemberMapperTest.save&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MemberRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/persistence" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.elixter.persistence.member.MemberRepositoryTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MemberRepositoryTest.insert" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/persistence" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.elixter.persistence.member.MemberRepositoryTest.insert&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,6 +224,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MemberRepositoryTest.insert" />
+        <item itemvalue="Gradle.MemberRepositoryTest" />
         <item itemvalue="Gradle.MemberServiceTest.createMember$kopring" />
         <item itemvalue="Gradle.MemberMapperTest.save" />
         <item itemvalue="Gradle.Tests in 'com.elixter.kopring'" />
@@ -175,7 +240,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664002463139</updated>
-      <workItem from="1664002465678" duration="4902000" />
+      <workItem from="1664002465678" duration="4954000" />
+      <workItem from="1664097119503" duration="3366000" />
     </task>
     <servers />
   </component>
@@ -192,5 +258,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/persistence/src/main/kotlin/com/elixter/persistence/PersistenceApplication.kt</url>
+          <line>8</line>
+          <properties method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
