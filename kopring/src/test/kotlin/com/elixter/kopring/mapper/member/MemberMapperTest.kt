@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test
 import org.mindrot.jbcrypt.BCrypt
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest
@@ -25,7 +26,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             email = "test@mapperTest.com",
             role = MemberRole.MEMBER
         ).apply {
-            memberMapper.save(this)
+            memberMapper.insert(this)
         }
 
         logger.info("member={}", member)
@@ -41,7 +42,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             email = "test@mapperTest.com",
             role = MemberRole.MEMBER
         ).apply {
-            memberMapper.save(this)
+            memberMapper.insert(this)
         }
 
         val findById = memberMapper.findById(member.id!!)
@@ -59,7 +60,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             email = "test@mapperTest.com",
             role = MemberRole.MEMBER
         ).apply {
-            memberMapper.save(this)
+            memberMapper.insert(this)
         }
 
         memberMapper.findByEmail("test@mapperTest.com")
@@ -79,7 +80,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             email = "test@mapperTest.com",
             role = MemberRole.MEMBER
         ).apply {
-            memberMapper.save(this)
+            memberMapper.insert(this)
         }
 
         memberMapper.findByLoginId("mapperTest")
@@ -99,7 +100,7 @@ class MemberMapperTest @Autowired constructor(val memberMapper: MemberMapper) {
             email = "test@mapperTest.com",
             role = MemberRole.MEMBER
         ).apply {
-            memberMapper.save(this)
+            memberMapper.insert(this)
         }
 
         logger.info("### update password ###")
