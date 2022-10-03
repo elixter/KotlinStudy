@@ -1,16 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-plugins {
-	id("org.springframework.boot") version "2.7.4"
-	id("io.spring.dependency-management") version "1.0.14.RELEASE"
-	kotlin("jvm") version "1.7.10"
-	kotlin("plugin.spring") version "1.6.21"
-	kotlin("plugin.jpa") version "1.6.21"
-}
-
 group = "com.elixter"
-version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
 
 configurations {
 	all {
@@ -33,7 +23,6 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	runtimeOnly("mysql:mysql-connector-java")
-	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2") // Mybatis
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 	// Bcrypt
@@ -45,6 +34,8 @@ dependencies {
 	// 캐싱
 	implementation("org.springframework.boot:spring-boot-starter-cache")
 	implementation("com.github.ben-manes.caffeine:caffeine")
+
+	implementation(project(":persistence"))
 }
 
 tasks.withType<KotlinCompile> {

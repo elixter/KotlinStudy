@@ -1,7 +1,6 @@
 package com.elixter.kopring.service.member
 
 import com.elixter.kopring.dto.member.CreateMemberParam
-import com.elixter.kopring.mapper.member.MemberMapper
 import mu.KLogging
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
@@ -11,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest
-class MemberServiceTest @Autowired constructor(val service: MemberService, val mapper: MemberMapper) {
+class MemberServiceTest @Autowired constructor(val service: MemberService) {
 
     
     // TODO: Mockk, FixtureMonkey 적용

@@ -8,16 +8,14 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.data.r2dbc.DataR2dbcTest
 import org.springframework.context.annotation.Import
-import org.springframework.test.annotation.Rollback
-import reactor.test.StepVerifier
 
 @DataR2dbcTest
 @Import(TestConfig::class)
 class MemberRepositoryTest @Autowired constructor(
     private var repository: MemberRepository,
-    private var txHelper: TransactionHelper,
 ) {
 
+    private var txHelper: TransactionHelper,
     @Test
     fun insert() {
         // given
