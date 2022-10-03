@@ -26,7 +26,7 @@ class MemberServiceTest {
         )
     }
 
-    // TODO: Mockk, FixtureMonkey 적용
+    // TODO: Junit exception 해결해야함.
     @Test
     internal fun createMember() {
         // given
