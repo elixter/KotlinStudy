@@ -8,6 +8,7 @@ import com.elixter.persistence.member.MemberRole
 import mu.KLogging
 import org.mindrot.jbcrypt.BCrypt
 import org.springframework.stereotype.Service
+import reactor.core.publisher.Mono
 
 @Service
 class MemberService(
@@ -16,7 +17,7 @@ class MemberService(
 
     // TODO: Caffein 캐싱 적용해보기.
     @LogExecutionTime
-    fun createUser(param: CreateMemberParam): MemberEntity {
+    fun createUser(param: CreateMemberParam): Mono<MemberEntity> {
         val member = MemberEntity(
             name = param.name,
             loginId = param.loginId,
@@ -24,10 +25,11 @@ class MemberService(
             email = param.email,
             role = MemberRole.MEMBER
         )
-        memberRepository.save(member)
-        logger.info { "[MemberService] member created - id : ${member.id}" }
 
-        return member
+        return memberRepository.save(member)
+            .also {
+                logger.info { "[MemberService] member created - id : ${member.id}" }
+            }
     }
 
 

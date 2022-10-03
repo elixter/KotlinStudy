@@ -8,14 +8,19 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.data.r2dbc.DataR2dbcTest
 import org.springframework.context.annotation.Import
+import org.springframework.transaction.reactive.TransactionalOperator
 
 @DataR2dbcTest
 @Import(TestConfig::class)
-class MemberRepositoryTest @Autowired constructor(
+class MemberRepositoryTest (
     private var repository: MemberRepository,
 ) {
 
-    private var txHelper: TransactionHelper,
+    @Autowired
+    lateinit var rxTx : TransactionalOperator
+
+    val txHelper: TransactionHelper = TransactionHelper(rxTx)
+
     @Test
     fun insert() {
         // given

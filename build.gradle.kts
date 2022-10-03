@@ -15,25 +15,14 @@ allprojects {
         mavenCentral()
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "11"
-        }
-    }
-
-    tasks.withType<Test> {
-        useJUnitPlatform()
-    }
-}
-
-subprojects {
     apply {
         plugin("org.jetbrains.kotlin.jvm")
         plugin("org.springframework.boot")
         plugin("io.spring.dependency-management")
         plugin("kotlin")
         plugin("kotlin-spring")
+        plugin("java")
+        plugin("idea")
     }
 
     dependencies {
@@ -44,5 +33,19 @@ subprojects {
 
         implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        testImplementation("io.mockk:mockk:1.12.0")
+        testImplementation("com.navercorp.fixturemonkey:fixture-monkey-kotlin:0.3.5")
+    }
+
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "11"
+        }
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
     }
 }
