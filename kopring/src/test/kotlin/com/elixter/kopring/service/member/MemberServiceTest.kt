@@ -1,22 +1,33 @@
 package com.elixter.kopring.service.member
 
 import com.elixter.kopring.dto.member.CreateMemberParam
-import com.elixter.kopring.mapper.member.MemberMapper
+import com.elixter.persistence.member.MemberRepository
+import com.navercorp.fixturemonkey.FixtureMonkey
+import com.navercorp.fixturemonkey.kotlin.KFixtureMonkey
+import com.navercorp.fixturemonkey.kotlin.giveMeOne
+import io.mockk.every
+import io.mockk.mockk
 import mu.KLogging
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.transaction.annotation.Transactional
+import reactor.core.publisher.Mono
 
-@SpringBootTest
-class MemberServiceTest @Autowired constructor(val service: MemberService, val mapper: MemberMapper) {
+class MemberServiceTest {
 
-    
-    // TODO: Mockk, FixtureMonkey 적용
+    private var memberService: MemberService
+
+    private var memberRepository: MemberRepository
+
+    init {
+        memberRepository = mockk()
+        memberService = MemberService(
+            memberRepository
+        )
+    }
+
+    // TODO: Junit exception 해결해야함.
     @Test
-    @Transactional
     internal fun createMember() {
         // given
         val param = CreateMemberParam(
@@ -27,11 +38,14 @@ class MemberServiceTest @Autowired constructor(val service: MemberService, val m
         )
 
         // when
-        val actual = assertDoesNotThrow { service.createUser(param) }
+        every { memberRepository.save(any()) } returns Mono.just(FIXTURE.giveMeOne())
+        val actual = assertDoesNotThrow { memberService.createUser(param) }
 
         // then
-        Assertions.assertEquals(param.name, actual.name)
+        Assertions.assertNotNull(actual.block()!!.id)
     }
 
-    companion object : KLogging()
+    companion object : KLogging() {
+        val FIXTURE = KFixtureMonkey.create()
+    }
 }
