@@ -17,16 +17,14 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-aop")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-	implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	runtimeOnly("mysql:mysql-connector-java")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 	// Bcrypt
-	implementation("de.svenkubiak:jBCrypt:0.4.1")
+	implementation("de.svenkubiak:jBCrypt:0.4.3")
 
 	// log4j2
 //	implementation("org.springframework.boot:spring-boot-starter-log4j2")
