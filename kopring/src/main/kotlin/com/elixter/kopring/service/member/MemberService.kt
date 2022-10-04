@@ -1,7 +1,7 @@
 package com.elixter.kopring.service.member
 
-import com.elixter.kopring.aop.LogExecutionTime
-import com.elixter.kopring.dto.member.CreateMemberParam
+import com.elixter.kopring.controller.dto.member.CreateMemberParam
+import com.elixter.kopring.controller.dto.member.MemberResponse
 import com.elixter.persistence.member.MemberEntity
 import com.elixter.persistence.member.MemberRepository
 import com.elixter.persistence.member.MemberRole
@@ -16,7 +16,6 @@ class MemberService(
 ) {
 
     // TODO: Caffein 캐싱 적용해보기.
-    @LogExecutionTime
     fun createUser(param: CreateMemberParam): Mono<MemberEntity> {
         val member = MemberEntity(
             name = param.name,
@@ -32,6 +31,17 @@ class MemberService(
             }
     }
 
+    fun getUser(id: Long): Mono<MemberResponse> {
+        return memberRepository.findById(id)
+            .mapNotNull {
+                MemberResponse(
+                    id = checkNotNull(it.id),
+                    name = it.name,
+                    loginId = it.loginId,
+                    email = it.email,
+                )
+            }
+    }
 
     companion object : KLogging()
 }
