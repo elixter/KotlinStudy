@@ -1,4 +1,4 @@
-package com.elixter.kopring.dto.member
+package com.elixter.kopring.controller.dto.member
 
 import com.elixter.persistence.member.MemberRole
 
