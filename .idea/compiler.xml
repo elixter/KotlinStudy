@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11">
-      <module name="com.elixter.persistence" target="11" />
-      <module name="com.elixter.persistence.main" target="11" />
-      <module name="com.elixter.persistence.test" target="11" />
+    <bytecodeTargetLevel target="17">
       <module name="kopring" target="17" />
       <module name="kopring.main" target="17" />
       <module name="kopring.test" target="17" />

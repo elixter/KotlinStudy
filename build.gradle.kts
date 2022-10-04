@@ -27,13 +27,13 @@ allprojects {
 
     dependencies {
         implementation(kotlin("stdlib"))
-        testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
         testImplementation(kotlin("test"))
 
-        implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
+        implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("io.mockk:mockk:1.12.8")
+        testImplementation("io.mockk:mockk:1.12.0")
         testImplementation("com.navercorp.fixturemonkey:fixture-monkey-kotlin:0.3.5")
     }
 
