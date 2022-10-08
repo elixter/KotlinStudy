@@ -9,6 +9,7 @@ import mu.KLogging
 import org.mindrot.jbcrypt.BCrypt
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono
+import reactor.kotlin.core.publisher.switchIfEmpty
 
 @Service
 class MemberService(
@@ -27,12 +28,16 @@ class MemberService(
 
         return memberRepository.save(member)
             .also {
-                logger.info { "[MemberService] member created - id : ${member.id}" }
+                logger.info { "[MemberService] member created - id : ${member.id}, loginId : ${member.loginId}, email : ${member.email}" }
             }
     }
 
-    fun getUser(id: Long): Mono<MemberResponse> {
-        return memberRepository.findById(id)
+    fun getMember(id: Long): Mono<MemberResponse> =
+        memberRepository.findById(id)
+            .switchIfEmpty {
+                logger.warn { "[회원조회] 회원 조회에 실패했습니다. - id : ${id}" }
+                throw Exception() // TODO: implement HandlerException
+            }
             .mapNotNull {
                 MemberResponse(
                     id = checkNotNull(it.id),
@@ -41,7 +46,7 @@ class MemberService(
                     email = it.email,
                 )
             }
-    }
+            .doOnSuccess { logger.info { "[회원조회] 조회 결과 : ${it}" } }
 
     companion object : KLogging()
 }
