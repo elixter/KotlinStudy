@@ -33,8 +33,13 @@ allprojects {
 
         implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
-        testImplementation("io.mockk:mockk:1.12.8")
+        testImplementation("io.mockk:mockk:1.13.2")
         testImplementation("com.navercorp.fixturemonkey:fixture-monkey-kotlin:0.3.5")
+
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+
     }
 
 

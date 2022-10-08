@@ -5,7 +5,6 @@ import com.elixter.kopring.controller.dto.member.CreateMemberParam
 import com.elixter.kopring.controller.dto.member.MemberResponse
 import com.elixter.kopring.service.member.MemberService
 import mu.KLogging
-import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -34,9 +33,9 @@ class MemberController (
     @LogExecutionTime
     internal fun getUser(
         @PathVariable id: Long,
-
     ): Mono<MemberResponse> {
-        return memberService.getUser(id)
+        logger.info { "[회원조회] - id : ${id}" }
+        return memberService.getMember(id)
     }
 
     companion object : KLogging()
