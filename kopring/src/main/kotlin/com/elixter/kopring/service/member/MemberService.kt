@@ -27,7 +27,7 @@ class MemberService(
 
         return memberRepository.save(member)
             .also {
-                logger.info { "[MemberService] member created - id : ${member.id}" }
+                logger.info { "[MemberService] member created - id : ${member.id}, loginId : ${member.loginId}, email : ${member.email}" }
             }
     }
 
