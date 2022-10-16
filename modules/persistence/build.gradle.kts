@@ -6,7 +6,7 @@ val jar: Jar by tasks
 bootJar.enabled = false
 jar.enabled = true
 
-group = "com.elixter"
+group = "com.elixter.persistence"
 
 repositories {
     mavenCentral()

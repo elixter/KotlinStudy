@@ -8,12 +8,13 @@ plugins {
 }
 
 allprojects {
-    group = "com.elixter"
-    version = "0.0.1-SNAPSHOT"
-
     repositories {
         mavenCentral()
     }
+}
+
+subprojects {
+    group = "com.elixter"
 
     apply {
         plugin("org.jetbrains.kotlin.jvm")
@@ -41,7 +42,6 @@ allprojects {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     }
-
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {

@@ -1,6 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
-group = "com.elixter"
+group = "com.elixter.kopring"
+
+val bootJar: BootJar by tasks
+
+bootJar.enabled = false
 
 configurations {
 	all {
@@ -13,6 +17,7 @@ repositories {
 }
 
 dependencies {
+	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-aop")

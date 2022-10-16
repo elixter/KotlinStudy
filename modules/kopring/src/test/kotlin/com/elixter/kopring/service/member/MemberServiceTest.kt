@@ -2,7 +2,6 @@ package com.elixter.kopring.service.member
 
 import com.elixter.kopring.controller.dto.member.CreateMemberParam
 import com.elixter.persistence.member.MemberRepository
-import com.navercorp.fixturemonkey.kotlin.KFixtureMonkey
 import com.navercorp.fixturemonkey.kotlin.KFixtureMonkeyBuilder
 import com.navercorp.fixturemonkey.kotlin.giveMeOne
 import io.mockk.every
