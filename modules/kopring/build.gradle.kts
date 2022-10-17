@@ -1,10 +1,4 @@
-import org.springframework.boot.gradle.tasks.bundling.BootJar
-
 group = "com.elixter.kopring"
-
-val bootJar: BootJar by tasks
-
-bootJar.enabled = false
 
 configurations {
 	all {

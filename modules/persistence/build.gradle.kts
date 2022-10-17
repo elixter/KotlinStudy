@@ -1,12 +1,12 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
+group = "com.elixter.persistence"
+
 val bootJar: BootJar by tasks
 val jar: Jar by tasks
 
 bootJar.enabled = false
 jar.enabled = true
-
-group = "com.elixter.persistence"
 
 repositories {
     mavenCentral()

@@ -1,7 +1,7 @@
 rootProject.name = "kotlinStudy"
 
-include(":kopring")
-include(":persistence")
+include("kopring")
+include("persistence")
 
 fun setProject(project: ProjectDescriptor) {
     project.name = project.path.substringAfterLast(":")
