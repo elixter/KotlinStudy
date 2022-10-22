@@ -9,7 +9,7 @@ import org.springframework.util.StopWatch
 @Aspect
 class LogExecutionTimeAspect {
 
-    @Around("@annotation(com.elixter.kopring.aop.LogExecutionTime)")
+    @Around("@annotation(LogExecutionTime)")
     @Throws(Throwable::class)
     fun logExecutionTime(joinPoint: ProceedingJoinPoint): Any? {
         if (!logger.isInfoEnabled) {

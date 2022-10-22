@@ -1,4 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
+val bootJar: BootJar by tasks
+val jar: Jar by tasks
+
+bootJar.enabled = false
+jar.enabled = true
 
 plugins {
     id("org.springframework.boot") version "2.7.4"
@@ -8,12 +15,13 @@ plugins {
 }
 
 allprojects {
-    group = "com.elixter"
-    version = "0.0.1-SNAPSHOT"
-
     repositories {
         mavenCentral()
     }
+}
+
+subprojects {
+    group = "com.elixter"
 
     apply {
         plugin("org.jetbrains.kotlin.jvm")
@@ -41,7 +49,6 @@ allprojects {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     }
-
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
